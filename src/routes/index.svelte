@@ -9,7 +9,7 @@ import About from './about.svelte';
     $: {
         if(searchTerm) {
             filteredPokemon = $pokemon.filter(pokeman => {
-                return pokeman.name.includes(searchTerm);
+                return pokeman.name.toLowerCase().includes(searchTerm.toLocaleLowerCase());
             })
         } else {
             filteredPokemon = [...$pokemon ]
